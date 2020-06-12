@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "Pay";
+}
+
+<h1>Pay</h1>
+<form action="@ViewBag.payPalConfig.PostUrl" method="post">
+    <input type="hidden" name="upload" value="1" />
+    <input type="hidden" name="return" value="@ViewBag.payPalConfig.ReturnUrl" />
+    <input type="hidden" name="cmd" value="_cart" />
+    @*<input type="hidden" name="rm" value="2" />*@ 
+    <input type="hidden" name="business" value="@ViewBag.payPalConfig.Business" />
+    <input type="hidden" name="notify_url" value="@ViewBag.payPalConfig.ReturnUrl">
+    <input type="hidden" name="cancel_return" value="http://112.196.5.114/psychics/dashboard/profile/cancel_return">
+
+    <input type="hidden" name="item_number_1" value="p01" />
+    <input type="hidden" name="item_name_1" value="test" />
+    <input type="hidden" name="amount_1" value="6" />
+    <input type="hidden" name="quantity_1" value="2" />
+    <input type="submit" value="submit" />
+</form>
